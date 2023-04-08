@@ -16,7 +16,7 @@ class CourseController{
 
     static getAllCourses = async(req,res) => {
         try{
-            const data = await CourseModel.find()
+            const data = await CourseModel.find().sort({_id:-1})
             res.status(201).json({
                 success: true,
                 data
