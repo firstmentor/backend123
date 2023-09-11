@@ -70,7 +70,7 @@ class StudentController{
             await data.save()
             res
             .status(201)
-            .json({ status: "success", message: "Student updated Successfully 😃🍻"});
+            .json({ status: "success", message: "Student updated Successfully 😃🍻", data});
         }catch(err){
             console.log(err)
         }

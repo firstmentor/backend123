@@ -15,7 +15,6 @@ class DashboardController{
                 courseCount,
                 messageCount
             })
-            // const data = ({studentCount},{courseCount}, {messageCount})
 
             res.status(200).json({
                 success: true,

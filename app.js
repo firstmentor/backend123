@@ -7,7 +7,6 @@ const fileUpload = require("express-fileupload");
 const API = require('./routes/api')
 const cookieParser = require('cookie-parser')
 const cors=require('cors')
-const port =process.env.PORT || 3001
 
 
 app.use(cors())
@@ -27,7 +26,7 @@ app.use(fileUpload({useTempFiles: true}));
 
 app.use(express.json())
 
-app.use('/api',API)
+app.use('/api/pn',API)
 
 connectDB()
 

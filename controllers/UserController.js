@@ -48,7 +48,7 @@ class UserController{
 
     static loginUser = async(req,res) => {
         try{
-            console.log(req.body)
+            // console.log(req.body)
             const {email, password} = req.body
             // console.log(password)
             if (email && password) {
@@ -56,8 +56,8 @@ class UserController{
                 // console.log(user)
                 if (user != null) {
                     const isMatched = await bcrypt.compare(password,user.password)
-                    // if ((user.email === email) && isMatched) {
-                    if ((user.email === email) && password) {
+                    if ((user.email === email) && isMatched) {
+                    // if ((user.email === email) && (user.password === password)) {
                         //generate jwt token
                         const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET_KEY);
                         // console.log(token)
